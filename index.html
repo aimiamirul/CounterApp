@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&display=swap" rel="stylesheet">
+<style>
+    * {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    h1 {
+        font-family: 'BhuTuka Expanded One', cursive;
+        color: white;
+        font-size: 40px;
+    }
+    h2 {
+        text-decoration: underline;
+        background: white 0.1;
+        color: white;
+        font-weight: 900;
+    }
+    button{
+        font-size: 15px;
+        padding: 15px;
+        margin-bottom: 30px;
+        font-family: 'BhuTuka Expanded One', cursive;
+    }
+    p {
+        color: white;
+        background: black;
+    }
+    body {
+        background: url("https://images.unsplash.com/photo-1646051683780-1085df68edcf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=700&q=60");
+        background-attachment: fixed;
+    }
+</style>
+<body>
+    <div id="templete">
+    <h1>People entered :</h1>
+    <h2 id="count-el">0</h2>
+    <button onclick="increment()" id="increment-btn">Count</button>
+    <button onclick="save()" id="save-btn">Save</button>
+    <p id="pre-text">Previos Entered :</p>
+    </div>
+    <script>
+        let countEl = document.getElementById("count-el")
+        let incBtn = document.getElementById("increment-btn")
+        let prevEl = document.getElementById("pre-text")
+
+        let count = 0
+
+        function increment() {
+            console.log("clicked")
+            count = count += 1
+            countEl.textContent = count
+            if (count === 10) {
+                alert("10 people count")
+                save()
+            } else if (count === 20) {
+                alert("20 people count")
+                save()
+        } else if (count === 30) {
+                alert("30 people count")
+                save()
+        } else if (count === 40) {
+                alert("40 people count")
+                save()
+    } else if (count === 50) {
+                alert("ok thats enough")
+                save()
+                count = 0
+                countEl.textContent = count
+    }
+}
+
+        function save() {
+            console.log(count)
+            prevEl.textContent += "-" + count
+            countEl.textContent = count
+        }
+    </script>
+</body>
+</html>
